@@ -4,10 +4,12 @@ p {
 }
 
 
+
 /* 1 || Header */
 
 header {
-    background-image: linear-gradient(to right, rgb(23, 23, 163), indigo);
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(23, 23, 163), rgb(46, 0, 130));
     color: white;
 }
 
@@ -16,21 +18,46 @@ h1 {
 }
 
 
-/* 2 || Search */
+
+/* 2 || Content */
+
+content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+
+/* 3 || Content - Aside */
+
+aside {
+    margin: 10px;
+    padding: 5px;
+}
 
 h2 {
     font-size: 30px;
 }
 
 
-/* 3 || Main - Current Forecast */
+
+/* 4 || Content - Main - Current Forecast */
+
+#currentf {
+    margin: 10px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(41, 41, 41);
+
+    padding: 5px;
+}
 
 h3 {
     font-size: 25px;
 }
 
-
-/* 4 || Main - 5-Day Forecast */
+/* 5 || Content - Main - 5-Day Forecast */
 
 h4 {
     font-size: 15px;
@@ -39,4 +66,19 @@ h4 {
 h5 {
     font-size: 18px;
     font-weight: bold;
+}
+
+#days {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.daybox {
+    margin: 10px;
+    padding: 5px;
+    min-height: 220px;
+    min-width: 170px;
+
+    background-color: #323d4f;
+    color: white;
 }

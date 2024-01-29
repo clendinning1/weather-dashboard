@@ -20,12 +20,14 @@
     </header>
 
     <content>
-        <search>
+        <aside>
             <h2>Search for a city:</h2>
-            <!--TD: searchbar goes here... does bootstrap already have one built?-->
-            <!--TD: search button goes here-->
-            <!--TD: search history goes here-->
-        </search>
+            <search>
+                <!--TD: searchbar goes here... does bootstrap already have one built?-->
+                <!--TD: search button goes here-->
+            </search>
+            <div id="history"><!--TD: search history goes here--></div>
+        </aside>
 
         <main>
             <div id="currentf">
@@ -41,35 +43,35 @@
                 <h4>5-Day Forecast:</h4>
                 <div id="days">
                     <!--Each Day-->
-                    <div id="day1">
+                    <div id="day1" class="daybox">
                         <h5>Date</h5>
                         <icon><!--TD: appropriate weather icon goes here--></icon>
                         <p id="d1temp" class="temp">Temp: </p>
                         <p id="d1wind" class="wind">Wind: </p>
                         <p id="d1humid" class="humid">Humidity: </p>
                     </div>
-                    <div id="day2">
+                    <div id="day2" class="daybox">
                         <h5>Date</h5>
                         <icon><!--TD: appropriate weather icon goes here--></icon>
                         <p id="d2temp" class="temp">Temp: </p>
                         <p id="d2wind" class="wind">Wind: </p>
                         <p id="d2humid" class="humid">Humidity: </p>
                     </div>
-                    <div id="day3">
+                    <div id="day3" class="daybox">
                         <h5>Date</h5>
                         <icon><!--TD: appropriate weather icon goes here--></icon>
                         <p id="d3temp" class="temp">Temp: </p>
                         <p id="d3wind" class="wind">Wind: </p>
                         <p id="d3humid" class="humid">Humidity: </p>
                     </div>
-                    <div id="day4">
+                    <div id="day4" class="daybox">
                         <h5>Date</h5>
                         <icon><!--TD: appropriate weather icon goes here--></icon>
                         <p id="d4temp" class="temp">Temp: </p>
                         <p id="d4wind" class="wind">Wind: </p>
                         <p id="d4humid" class="humid">Humidity: </p>
                     </div>
-                    <div id="day5">
+                    <div id="day5" class="daybox">
                         <h5>Date</h5>
                         <icon><!--TD: appropriate weather icon goes here--></icon>
                         <p id="d5temp" class="temp">Temp: </p>
