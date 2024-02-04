@@ -38,3 +38,8 @@ console.log(fetch(queryURL));
 
 
 // search functions
+// var for user input in form
+// userinput = city
+// run queryurl
+// pull relevant info from the query by setting it to various vars
+// display vars onto page (date, icon, temp, etc)
