@@ -40,7 +40,24 @@ h2 {
 }
 
 .form-outline {
+    /* search button height */
     height: 30px;
+}
+
+.his-btn {
+    /* buttons for previously searched cities */
+    height: 40px;
+    margin: 15px 0px 15px 0px;
+    border-radius: 5px;
+    padding: 7px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.his-btn-label {
+    /* labels on buttons for prev src cities */
+    text-decoration: none;
+    color: black;
 }
 
 
