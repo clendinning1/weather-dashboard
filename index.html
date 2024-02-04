@@ -23,8 +23,16 @@
         <aside>
             <h2>Search for a city:</h2>
             <search>
-                <!--TD: searchbar goes here... does bootstrap already have one built?-->
-                <!--TD: search button goes here-->
+                <!--Search Bar-->
+                <div class="input-group">
+                    <div class="form-outline" data-mdb-input-init>
+                        <input type="search" id="form1" class="form-control" />
+                        <label class="form-label" for="form1"></label>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </search>
             <div id="history"><!--TD: search history goes here--></div>
         </aside>

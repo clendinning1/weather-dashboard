@@ -9,7 +9,7 @@ p {
 
 header {
     text-align: center;
-    background-image: linear-gradient(to right, rgb(23, 23, 163), rgb(46, 0, 130));
+    background-image: linear-gradient(to right, rgb(76, 76, 226), rgb(56, 0, 109));
     color: white;
 }
 
@@ -39,6 +39,9 @@ h2 {
     font-size: 30px;
 }
 
+.form-outline {
+    height: 30px;
+}
 
 
 /* 4 || Content - Main - Current Forecast */
