@@ -12,8 +12,7 @@
 
 <body>
     <!--TO-DO:-->
-    <!--link open weather-->
-    <!--test that jquery, bootstrap, and fontawesome are working-->
+    <!--test that jquery is working-->
 
     <header>
         <h1>Weather Dashboard</h1>
@@ -23,10 +22,27 @@
         <aside>
             <h2>Search for a city:</h2>
             <search>
-                <!--TD: searchbar goes here... does bootstrap already have one built?-->
-                <!--TD: search button goes here-->
+                <!--Search Bar-->
+                <div class="input-group">
+                    <div class="form-outline" data-mdb-input-init>
+                        <input type="search" id="form1" class="form-control" />
+                        <label class="form-label" for="form1"></label>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </search>
-            <div id="history"><!--TD: search history goes here--></div>
+            <nav id="history">
+                <hr>
+                <!--History buttons-->
+                <div class="his-btn">
+                    <a class="his-btn-label" href="#">City Name</a>
+                </div>
+                <div class="his-btn">
+                    <a class="his-btn-label" href="#">City Name 2</a>
+                </div>
+            </nav>
         </aside>
 
         <main>
