@@ -1,0 +1,84 @@
+/* 0 || General */
+p {
+    font-size: 16px;
+}
+
+
+
+/* 1 || Header */
+
+header {
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(23, 23, 163), rgb(46, 0, 130));
+    color: white;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+
+
+/* 2 || Content */
+
+content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+
+/* 3 || Content - Aside */
+
+aside {
+    margin: 10px;
+    padding: 5px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+
+
+/* 4 || Content - Main - Current Forecast */
+
+#currentf {
+    margin: 10px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(41, 41, 41);
+
+    padding: 5px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+/* 5 || Content - Main - 5-Day Forecast */
+
+h4 {
+    font-size: 15px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#days {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.daybox {
+    margin: 10px;
+    padding: 5px;
+    min-height: 220px;
+    min-width: 170px;
+
+    background-color: #323d4f;
+    color: white;
+}
