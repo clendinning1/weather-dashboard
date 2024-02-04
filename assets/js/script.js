@@ -28,8 +28,6 @@
 //    APIs, how could we retrieve geographical coordinates given a city name?
 
 
-// code
-
 // API
 // site: https://home.openweathermap.org/api_keys
 var APIKey = "fc7efc392867b6b77f021be757a566cf";
@@ -37,3 +35,6 @@ var city = "austin";
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid" + APIKey;
 
 console.log(fetch(queryURL));
+
+
+// search functions
