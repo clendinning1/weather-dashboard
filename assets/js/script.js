@@ -62,16 +62,25 @@ async function pullWeather() {
     iconPrint.appendChild(img);
 
 
-    // temperature = Object > main > temp
     // grab the current temp 
     var temp = weath["main"]["temp"];
     // print it
     var tempPrint = document.getElementById("currenttemp");
     tempPrint.innerText = "Temp: " + temp + " \u00B0F";
 
-    // wind speed = Object > wind > speed
 
-    // humidity = Object > main > humidity
+    // grab the current wind speed
+    var wind = weath["wind"]["speed"];
+    // print it
+    var windPrint = document.getElementById("currentwind");
+    windPrint.innerText = "Wind: " + wind + " MPH";
+
+
+    // grab the current humidity
+    var humid = weath["main"]["humidity"];
+    // print it
+    var humidPrint = document.getElementById("currenthumid");
+    humidPrint.innerText = "Humidity: " + humid + "%";
 }
 
 pullWeather();
