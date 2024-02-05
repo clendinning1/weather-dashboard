@@ -32,10 +32,40 @@
 // site: https://home.openweathermap.org/api_keys
 var APIKey = "fc7efc392867b6b77f021be757a566cf";
 var city = "austin";
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid" + APIKey;
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
-console.log(fetch(queryURL));
+var newTest = "https://api.openweathermap.org/data/2.5/weather?lat=" + "30.26715000" + "&lon=" + "-97.74306000" + "&appid=" + APIKey;
 
+
+async function pullWeather() {
+    // fetch the info
+    const response = await fetch(newTest);
+    const weath = await response.json();
+    console.log(weath);
+
+    // grab the current date 
+    var dt = weath["dt"];
+    var day = new Date(dt * 1000);
+    // print it on the screen
+    var dtPrint = document.getElementById("currentdate");
+    dtPrint.innerText = (day.toDateString());
+
+
+    // grab the icon for current conditions
+    var icon = weath["weather"]["0"]["icon"];
+    // print it
+    var iconPrint = document.getElementById("currenticon");
+    iconPrint.innerText = (icon);
+
+
+    // temperature = Object > main > temp
+
+    // wind speed = Object > wind > speed
+
+    // humidity = Object > main > humidity
+}
+
+pullWeather();
 
 // search functions
 // var for user input in form
