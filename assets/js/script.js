@@ -31,9 +31,11 @@
 // API
 // site: https://home.openweathermap.org/api_keys
 var APIKey = "fc7efc392867b6b77f021be757a566cf";
-var city = "austin"; // take in user input for city
-var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
-var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey + "&units=imperial";
+var citylat = "30.26715000"
+var citylon = "97.74306000"
+var city = "?lat=" + citylat + "&lon=" + citylon; // take in user input for city
+var weatherURL = "https://api.openweathermap.org/data/2.5/weather" + city + "&appid=" + APIKey + "&units=imperial";
+var forecastURL = "https://api.openweathermap.org/data/2.5/forecast" + city + "&appid=" + APIKey + "&units=imperial";
 
 // search functions
 // var for user input in form
@@ -90,47 +92,56 @@ async function pullForecast() {
     // fetch the info
     const response = await fetch(forecastURL);
     const forecast = await response.json();
-    console.log(forecast);
-
-    // DAY 1
-    // grab the date 
-    var dt1 = forecast["list"]["1"]["dt"];
-    var day1 = new Date(dt1 * 1000);
-    // print it
-    var dt1Print = document.getElementById("date1");
-    dt1Print.innerText = (day1.toDateString());
-
-
-    // grab the icon for conditions
-    var iconID1 = forecast["list"]["1"]["weather"]["0"]["icon"];
-    var iconURL1 = "https://openweathermap.org/img/wn/" + iconID1 + ".png"
-    // print it
-    var iconPrint1 = document.getElementById("day1icon");
-    var icon1 = document.createElement("img");
-    icon1.src = iconURL1;
-    iconPrint1.appendChild(icon1);
-
-
-    // grab the temp 
-    var temp1 = forecast["list"]["1"]["main"]["temp"];
-    // print it
-    var temp1Print = document.getElementById("d1temp");
-    temp1Print.innerText = "Temp: " + temp1 + " \u00B0F";
     
-    
-    // grab the wind speed
-    var wind1 = forecast["list"]["1"]["wind"]["speed"];
-    // print it
-    var wind1Print = document.getElementById("d1wind");
-    wind1Print.innerText = "Wind: " + wind1 + " MPH";
-    
-    
-    // grab the humidity
-    var humid1 = forecast["list"]["1"]["main"]["humidity"];
-    // print it
-    var humid1Print = document.getElementById("d1humid");
-    humid1Print.innerText = "Humidity: " + humid1 + "%";
 
+    for (let i = 3; i < 36; i++) {
+        if (i == 3 || i == 11 || i == 19 || i == 27 || i == 35) {
+            // only applies if the iteration is one of those numbers.
+            // those 5 numbers are noon for each upcoming day in the forecast.
+
+            // grab dates
+            var dtF = forecast["list"][[i]]["dt"];
+            var dayF = new Date(dtF * 1000);
+            // print it
+            var dateEl = "date" + [i]
+            var dtFPrint = document.getElementById(dateEl);
+            dtFPrint.innerText = (dayF.toDateString());
+
+            // grab the icons
+            var iconIDF = forecast["list"][[i]]["weather"]["0"]["icon"];
+            var iconURLF = "https://openweathermap.org/img/wn/" + iconIDF + ".png"
+            // print them
+            var iconDiv = "day" + [i] + "icon";
+            var iconPrintF = document.getElementById(iconDiv);
+            var iconF = document.createElement("img");
+            iconF.src = iconURLF;
+            iconPrintF.appendChild(iconF);
+
+
+            // grab the temps
+            var tempF = forecast["list"][[i]]["main"]["temp"];
+            // print them
+            var tempEl = "d" + [i] + "temp";
+            var tempFPrint = document.getElementById(tempEl);
+            tempFPrint.innerText = "Temp: " + tempF + " \u00B0F";
+
+
+            // grab the wind speeds
+            var windF = forecast["list"][[i]]["wind"]["speed"];
+            // print them
+            var windEl = "d" + [i] + "wind";
+            var windFPrint = document.getElementById(windEl);
+            windFPrint.innerText = "Wind: " + windF + " MPH";
+
+
+            // grab the humids
+            var humidF = forecast["list"][[i]]["main"]["humidity"];
+            // print them
+            var humidEl = "d" + [i] + "humid"
+            var humidFPrint = document.getElementById(humidEl);
+            humidFPrint.innerText = "Humidity: " + humidF + "%";
+        }
+    }
 }
 
 pullCurrentWeather();
