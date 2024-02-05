@@ -34,7 +34,7 @@ var APIKey = "fc7efc392867b6b77f021be757a566cf";
 var city = "austin";
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
-var newTest = "https://api.openweathermap.org/data/2.5/weather?lat=" + "30.26715000" + "&lon=" + "-97.74306000" + "&appid=" + APIKey;
+var newTest = "https://api.openweathermap.org/data/2.5/weather?lat=" + "30.26715000" + "&lon=" + "-97.74306000" + "&appid=" + APIKey + "&units=imperial";
 
 
 async function pullWeather() {
@@ -43,7 +43,7 @@ async function pullWeather() {
     const weath = await response.json();
     console.log(weath);
 
-    
+
     // grab the current date 
     var dt = weath["dt"];
     var day = new Date(dt * 1000);
@@ -63,6 +63,11 @@ async function pullWeather() {
 
 
     // temperature = Object > main > temp
+    // grab the current temp 
+    var temp = weath["main"]["temp"];
+    // print it
+    var tempPrint = document.getElementById("currenttemp");
+    tempPrint.innerText = "Temp: " + temp + " \u00B0F";
 
     // wind speed = Object > wind > speed
 
