@@ -10,6 +10,7 @@
 ### Tools
 - [OpenWeatherMap API](https://openweathermap.org/)
 - [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
 ### Resources
 - [MDN](https://developer.mozilla.org/en-US/)
 - [W3](https://www.w3schools.com/)
