@@ -31,17 +31,15 @@
 // API
 // site: https://home.openweathermap.org/api_keys
 var APIKey = "fc7efc392867b6b77f021be757a566cf";
-var city = "austin";
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+var city = "austin"; // take in user input for city
+var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
+var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey + "&units=imperial";
 
-var newTest = "https://api.openweathermap.org/data/2.5/weather?lat=" + "30.26715000" + "&lon=" + "-97.74306000" + "&appid=" + APIKey + "&units=imperial";
-
-
-async function pullWeather() {
+// CURRENT WEATHER
+async function pullCurrentWeather() {
     // fetch the info
-    const response = await fetch(newTest);
+    const response = await fetch(weatherURL);
     const weath = await response.json();
-    console.log(weath);
 
 
     // grab the current date 
@@ -57,9 +55,9 @@ async function pullWeather() {
     var iconURL = "https://openweathermap.org/img/wn/" + iconID + ".png"
     // print it
     var iconPrint = document.getElementById("currenticon");
-    var img = document.createElement("img");
-    img.src = iconURL;
-    iconPrint.appendChild(img);
+    var icon = document.createElement("img");
+    icon.src = iconURL;
+    iconPrint.appendChild(icon);
 
 
     // grab the current temp 
@@ -83,7 +81,57 @@ async function pullWeather() {
     humidPrint.innerText = "Humidity: " + humid + "%";
 }
 
-pullWeather();
+// 5-DAY FORECAST
+async function pullForecast() {
+    // fetch the info
+    const response = await fetch(forecastURL);
+    const forecast = await response.json();
+    console.log(forecast);
+
+
+    // grab the current date 
+    var dt1 = forecast["list"]["1"]["dt"];
+    var day1 = new Date(dt1 * 1000);
+    // print it on the screen
+    var dt1Print = document.getElementById("date1");
+    dt1Print.innerText = (day1.toDateString());
+
+
+    // grab the icon for current conditions
+    var iconID1 = forecast["list"]["1"]["weather"]["0"]["icon"];
+    var iconURL1 = "https://openweathermap.org/img/wn/" + iconID1 + ".png"
+    // print it
+    var iconPrint1 = document.getElementById("day1icon");
+    var icon1 = document.createElement("img");
+    icon1.src = iconURL1;
+    iconPrint1.appendChild(icon1);
+    //
+    //
+    //// grab the current temp 
+    //var temp = weath["main"]["temp"];
+    //// print it
+    //var tempPrint = document.getElementById("currenttemp");
+    //tempPrint.innerText = "Temp: " + temp + " \u00B0F";
+    //
+    //
+    //// grab the current wind speed
+    //var wind = weath["wind"]["speed"];
+    //// print it
+    //var windPrint = document.getElementById("currentwind");
+    //windPrint.innerText = "Wind: " + wind + " MPH";
+    //
+    //
+    //// grab the current humidity
+    //var humid = weath["main"]["humidity"];
+    //// print it
+    //var humidPrint = document.getElementById("currenthumid");
+    //humidPrint.innerText = "Humidity: " + humid + "%";
+
+}
+
+pullCurrentWeather();
+pullForecast();
+
 
 // search functions
 // var for user input in form
