@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
-    <script src="https://kit.fontawesome.com/3dfe415d65.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -48,8 +47,8 @@
         <main>
             <div id="currentf">
                 <!--Current Forecast-->
-                <h3>City Name & Date</h3>
-                <icon><!--TD: appropriate weather icon goes here--></icon>
+                <h3 id="currentdate"></h3>
+                <icon id="currenticon"></icon>
                 <p id="currenttemp" class="temp">Temp: </p>
                 <p id="currentwind" class="wind">Wind: </p>
                 <p id="currenthumid" class="humid">Humidity: </p>
@@ -59,40 +58,40 @@
                 <h4>5-Day Forecast:</h4>
                 <div id="days">
                     <!--Each Day-->
-                    <div id="day1" class="daybox">
-                        <h5>Date</h5>
-                        <icon><!--TD: appropriate weather icon goes here--></icon>
-                        <p id="d1temp" class="temp">Temp: </p>
-                        <p id="d1wind" class="wind">Wind: </p>
-                        <p id="d1humid" class="humid">Humidity: </p>
-                    </div>
-                    <div id="day2" class="daybox">
-                        <h5>Date</h5>
-                        <icon><!--TD: appropriate weather icon goes here--></icon>
-                        <p id="d2temp" class="temp">Temp: </p>
-                        <p id="d2wind" class="wind">Wind: </p>
-                        <p id="d2humid" class="humid">Humidity: </p>
-                    </div>
                     <div id="day3" class="daybox">
-                        <h5>Date</h5>
-                        <icon><!--TD: appropriate weather icon goes here--></icon>
+                        <h5 id="date3">Date</h5>
+                        <icon id="day3icon"></icon>
                         <p id="d3temp" class="temp">Temp: </p>
                         <p id="d3wind" class="wind">Wind: </p>
                         <p id="d3humid" class="humid">Humidity: </p>
                     </div>
-                    <div id="day4" class="daybox">
-                        <h5>Date</h5>
-                        <icon><!--TD: appropriate weather icon goes here--></icon>
-                        <p id="d4temp" class="temp">Temp: </p>
-                        <p id="d4wind" class="wind">Wind: </p>
-                        <p id="d4humid" class="humid">Humidity: </p>
+                    <div id="day11" class="daybox">
+                        <h5 id="date11">Date</h5>
+                        <icon id="day11icon"></icon>
+                        <p id="d11temp" class="temp">Temp: </p>
+                        <p id="d11wind" class="wind">Wind: </p>
+                        <p id="d11humid" class="humid">Humidity: </p>
                     </div>
-                    <div id="day5" class="daybox">
-                        <h5>Date</h5>
-                        <icon><!--TD: appropriate weather icon goes here--></icon>
-                        <p id="d5temp" class="temp">Temp: </p>
-                        <p id="d5wind" class="wind">Wind: </p>
-                        <p id="d5humid" class="humid">Humidity: </p>
+                    <div id="day19" class="daybox">
+                        <h5 id="date19">Date</h5>
+                        <icon id="day19icon"></icon>
+                        <p id="d19temp" class="temp">Temp: </p>
+                        <p id="d19wind" class="wind">Wind: </p>
+                        <p id="d19humid" class="humid">Humidity: </p>
+                    </div>
+                    <div id="day27" class="daybox">
+                        <h5 id="date27">Date</h5>
+                        <icon id="day27icon"></icon>
+                        <p id="d27temp" class="temp">Temp: </p>
+                        <p id="d27wind" class="wind">Wind: </p>
+                        <p id="d27humid" class="humid">Humidity: </p>
+                    </div>
+                    <div id="day35" class="daybox">
+                        <h5 id="date35">Date</h5>
+                        <icon id="day35icon"></icon>
+                        <p id="d35temp" class="temp">Temp: </p>
+                        <p id="d35wind" class="wind">Wind: </p>
+                        <p id="d35humid" class="humid">Humidity: </p>
                     </div>
                 </div>
             </div>
