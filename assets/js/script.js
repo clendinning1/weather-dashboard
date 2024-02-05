@@ -43,6 +43,7 @@ async function pullWeather() {
     const weath = await response.json();
     console.log(weath);
 
+    
     // grab the current date 
     var dt = weath["dt"];
     var day = new Date(dt * 1000);
@@ -52,10 +53,13 @@ async function pullWeather() {
 
 
     // grab the icon for current conditions
-    var icon = weath["weather"]["0"]["icon"];
+    var iconID = weath["weather"]["0"]["icon"];
+    var iconURL = "https://openweathermap.org/img/wn/" + iconID + ".png"
     // print it
     var iconPrint = document.getElementById("currenticon");
-    iconPrint.innerText = (icon);
+    var img = document.createElement("img");
+    img.src = iconURL;
+    iconPrint.appendChild(img);
 
 
     // temperature = Object > main > temp

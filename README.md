@@ -15,3 +15,4 @@
 - [MDN](https://developer.mozilla.org/en-US/)
 - [W3](https://www.w3schools.com/)
 - https://stackoverflow.com/questions/65746475/how-to-get-data-info-from-openweathermap-api-dt
+- https://stackoverflow.com/questions/2735881/adding-images-to-an-html-document-with-javascript
