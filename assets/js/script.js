@@ -12,18 +12,22 @@
 //    APIs, how could we retrieve geographical coordinates given a city name?
 
 
-// API
-// site: https://home.openweathermap.org/api_keys
-var APIKey = "fc7efc392867b6b77f021be757a566cf";
-var cityLat = "30.26715000"
-var cityLon = "97.74306000"
-var cityCoords = "?lat=" + cityLat + "&lon=" + cityLon; // take in user input for city
-var weatherURL = "https://api.openweathermap.org/data/2.5/weather" + cityCoords + "&appid=" + APIKey + "&units=imperial";
-var forecastURL = "https://api.openweathermap.org/data/2.5/forecast" + cityCoords + "&appid=" + APIKey + "&units=imperial";
 
 // search functions
 // var for user input in form
 // userinput = city
+
+// openweathermap API
+var APIKey = "fc7efc392867b6b77f021be757a566cf";
+
+var cityLat = "30.26715000"
+var cityLon = "97.74306000"
+var cityCoords = "?lat=" + cityLat + "&lon=" + cityLon; // take in user input for city
+
+// URLs for weather and five day forecast
+var weatherURL = "https://api.openweathermap.org/data/2.5/weather" + cityCoords + "&appid=" + APIKey + "&units=imperial";
+var forecastURL = "https://api.openweathermap.org/data/2.5/forecast" + cityCoords + "&appid=" + APIKey + "&units=imperial";
+
 
 // CURRENT WEATHER
 async function pullCurrentWeather() {
