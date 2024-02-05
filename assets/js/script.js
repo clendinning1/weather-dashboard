@@ -35,6 +35,10 @@ var city = "austin"; // take in user input for city
 var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
 var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey + "&units=imperial";
 
+// search functions
+// var for user input in form
+// userinput = city
+
 // CURRENT WEATHER
 async function pullCurrentWeather() {
     // fetch the info
@@ -88,16 +92,16 @@ async function pullForecast() {
     const forecast = await response.json();
     console.log(forecast);
 
-
-    // grab the current date 
+    // DAY 1
+    // grab the date 
     var dt1 = forecast["list"]["1"]["dt"];
     var day1 = new Date(dt1 * 1000);
-    // print it on the screen
+    // print it
     var dt1Print = document.getElementById("date1");
     dt1Print.innerText = (day1.toDateString());
 
 
-    // grab the icon for current conditions
+    // grab the icon for conditions
     var iconID1 = forecast["list"]["1"]["weather"]["0"]["icon"];
     var iconURL1 = "https://openweathermap.org/img/wn/" + iconID1 + ".png"
     // print it
@@ -105,37 +109,29 @@ async function pullForecast() {
     var icon1 = document.createElement("img");
     icon1.src = iconURL1;
     iconPrint1.appendChild(icon1);
-    //
-    //
-    //// grab the current temp 
-    //var temp = weath["main"]["temp"];
-    //// print it
-    //var tempPrint = document.getElementById("currenttemp");
-    //tempPrint.innerText = "Temp: " + temp + " \u00B0F";
-    //
-    //
-    //// grab the current wind speed
-    //var wind = weath["wind"]["speed"];
-    //// print it
-    //var windPrint = document.getElementById("currentwind");
-    //windPrint.innerText = "Wind: " + wind + " MPH";
-    //
-    //
-    //// grab the current humidity
-    //var humid = weath["main"]["humidity"];
-    //// print it
-    //var humidPrint = document.getElementById("currenthumid");
-    //humidPrint.innerText = "Humidity: " + humid + "%";
+
+
+    // grab the temp 
+    var temp1 = forecast["list"]["1"]["main"]["temp"];
+    // print it
+    var temp1Print = document.getElementById("d1temp");
+    temp1Print.innerText = "Temp: " + temp1 + " \u00B0F";
+    
+    
+    // grab the wind speed
+    var wind1 = forecast["list"]["1"]["wind"]["speed"];
+    // print it
+    var wind1Print = document.getElementById("d1wind");
+    wind1Print.innerText = "Wind: " + wind1 + " MPH";
+    
+    
+    // grab the humidity
+    var humid1 = forecast["list"]["1"]["main"]["humidity"];
+    // print it
+    var humid1Print = document.getElementById("d1humid");
+    humid1Print.innerText = "Humidity: " + humid1 + "%";
 
 }
 
 pullCurrentWeather();
 pullForecast();
-
-
-// search functions
-// var for user input in form
-// userinput = city
-// run queryurl
-// pull relevant info from the query by setting it to various vars
-// display vars onto page (date, icon, temp, etc)
