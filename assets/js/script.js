@@ -15,11 +15,11 @@
 // API
 // site: https://home.openweathermap.org/api_keys
 var APIKey = "fc7efc392867b6b77f021be757a566cf";
-var citylat = "30.26715000"
-var citylon = "97.74306000"
-var city = "?lat=" + citylat + "&lon=" + citylon; // take in user input for city
-var weatherURL = "https://api.openweathermap.org/data/2.5/weather" + city + "&appid=" + APIKey + "&units=imperial";
-var forecastURL = "https://api.openweathermap.org/data/2.5/forecast" + city + "&appid=" + APIKey + "&units=imperial";
+var cityLat = "30.26715000"
+var cityLon = "97.74306000"
+var cityCoords = "?lat=" + cityLat + "&lon=" + cityLon; // take in user input for city
+var weatherURL = "https://api.openweathermap.org/data/2.5/weather" + cityCoords + "&appid=" + APIKey + "&units=imperial";
+var forecastURL = "https://api.openweathermap.org/data/2.5/forecast" + cityCoords + "&appid=" + APIKey + "&units=imperial";
 
 // search functions
 // var for user input in form
@@ -30,14 +30,19 @@ async function pullCurrentWeather() {
     // fetch the info
     const response = await fetch(weatherURL);
     const weath = await response.json();
+    console.log(weath);
 
+    // grab the city name
+    var currCity = weath["name"];
+    var currCityPrint = document.getElementById("currentcity");
+    currCityPrint.innerText = currCity + " ("
 
     // grab the current date 
     var dt = weath["dt"];
     var day = new Date(dt * 1000);
     // print it on the screen
     var dtPrint = document.getElementById("currentdate");
-    dtPrint.innerText = (day.toDateString());
+    dtPrint.innerText = (day.toDateString()) + ")";
 
 
     // grab the icon for current conditions
