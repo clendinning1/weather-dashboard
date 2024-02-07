@@ -36,7 +36,10 @@ async function pullCityInfo() {
     // fetch the info
     const cityResponse = await fetch(geocodeURL);
     const cityInfo = await cityResponse.json();
-    console.log(cityInfo);
+    
+    var cityLatReal = cityInfo["0"]["lat"];
+    var cityLonReal = cityInfo["0"]["lon"];
+    console.log(cityLatReal + " + " + cityLonReal);
 }
 
 pullCityInfo();
