@@ -20,6 +20,10 @@
 // openweathermap API
 var APIKey = "fc7efc392867b6b77f021be757a566cf";
 
+// URL for translating city names into coords
+var cityInput = "austin"
+var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput + "&limit=1&appid=" + APIKey
+
 var cityLat = "30.26715000"
 var cityLon = "97.74306000"
 var cityCoords = "?lat=" + cityLat + "&lon=" + cityLon; // take in user input for city
@@ -28,12 +32,21 @@ var cityCoords = "?lat=" + cityLat + "&lon=" + cityLon; // take in user input fo
 var weatherURL = "https://api.openweathermap.org/data/2.5/weather" + cityCoords + "&appid=" + APIKey + "&units=imperial";
 var forecastURL = "https://api.openweathermap.org/data/2.5/forecast" + cityCoords + "&appid=" + APIKey + "&units=imperial";
 
+async function pullCityInfo() {
+    // fetch the info
+    const cityResponse = await fetch(geocodeURL);
+    const cityInfo = await cityResponse.json();
+    console.log(cityInfo);
+}
+
+pullCityInfo();
+
 
 // CURRENT WEATHER
 async function pullCurrentWeather() {
     // fetch the info
-    const response = await fetch(weatherURL);
-    const weath = await response.json();
+    const weathResponse = await fetch(weatherURL);
+    const weath = await weathResponse.json();
     console.log(weath);
 
     // grab the city name
@@ -83,9 +96,9 @@ async function pullCurrentWeather() {
 // 5-DAY FORECAST
 async function pullForecast() {
     // fetch the info
-    const response = await fetch(forecastURL);
-    const forecast = await response.json();
-
+    const foreResponse = await fetch(forecastURL);
+    const forecast = await foreResponse.json();
+    console.log(forecast);
 
     for (let i = 3; i < 36; i++) {
         if (i == 3 || i == 11 || i == 19 || i == 27 || i == 35) {
