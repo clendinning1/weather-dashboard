@@ -26,8 +26,96 @@ var cityInput = "austin"
 var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput + "&limit=1&appid=" + APIKey
 
 // Declaring city coord vars for later
-var cityLat = 0;
-var cityLon = 0;
+let cityLat = 0;
+let cityLon = 0;
+
+
+
+
+
+
+// USER INPUT STUFF
+
+var searchBtn = document.getElementById("searchBtn");
+searchBtn.addEventListener("click", searchCity);
+
+let cityHistory = ["search history:"];
+
+function searchCity () {
+    // grab search input
+    let searchInput = document.getElementById("searchbar")[0].value;
+
+    // add city to array
+    cityHistory.push(searchInput);
+
+    // translate to string and add to local storage
+    localStorage.setItem("cityhistory", JSON.stringify(cityHistory));
+
+    console.log(cityHistory);
+}
+
+
+
+//let userinit = ["initials:"];
+//let userscore = ["scores:"];
+//let hasScores = false;
+//
+//function submitBtnFunct() {
+//    // grab initials
+//    let playerInitials = document.getElementById("initials")[0].value;
+//
+//    // adds initials and score to arrays
+//    userinit.push(playerInitials);
+//    userscore.push(finalScore);
+//
+//    // translate to string and add to local storage
+//    localStorage.setItem("userinit", JSON.stringify(userinit));
+//    localStorage.setItem("userscore", JSON.stringify(userscore));
+//
+//    // tell the prgrm we have data now
+//    hasScores = true;
+//
+//    // move to high score page
+//    pagehsSwitch();
+//}
+//
+//
+//let scoreSpan = document.getElementById("scorespan");
+//function displayScores() {
+//    // resetting scoreboard
+//    scoreSpan.innerText = "";
+//
+//    // pull data from local storage
+//    var grabinit = localStorage.getItem("userinit");
+//    var grabscore = localStorage.getItem("userscore");
+//
+//    // parse it back into an array from a string
+//    var parseinit = JSON.parse(grabinit);
+//    var parsescore = JSON.parse(grabscore);
+//
+//    // if we have no data, don't run this code
+//    if (hasScores === false) { } else {
+//        // for loop modified from stack overflow link in readme.
+//        for (let i = 1; i < parseinit.length; i++) {
+//            // starting at one; running as long as i < the number of values in the array; increasing by one each time the code is executed
+//            let storedScores = document.createElement("p"); // ss creates a paragraph element
+//            storedScores.innerText = ([i] + ". " + parseinit[i] + " - " + parsescore[i]);
+//            // text in the p element = "i. initials - score" for each iteration.
+//            scoreSpan.appendChild(storedScores); // attaches ss to the scorespan id in the html
+//        }
+//    }
+//
+//}
+
+
+
+
+
+
+
+
+
+
 
 
 
