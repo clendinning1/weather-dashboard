@@ -4,7 +4,6 @@ p {
 }
 
 
-
 /* 1 || Header */
 
 header {
@@ -50,13 +49,19 @@ h2 {
     margin: 15px 0px 15px 0px;
     border-radius: 5px;
     padding: 7px;
+
     text-align: center;
     background-color: lightgray;
+    cursor: pointer;
 }
 
 .his-btn-label {
     /* labels on buttons for prev src cities */
     text-decoration: none;
+    color: black;
+}
+
+.his-btn-label:hover {
     color: black;
 }
 
@@ -71,6 +76,8 @@ h2 {
     border-color: rgb(41, 41, 41);
 
     padding: 5px;
+
+    background-color: #b3c6e7;
 }
 
 h3 {
@@ -79,8 +86,13 @@ h3 {
 
 /* 5 || Content - Main - 5-Day Forecast */
 
+#futuref {
+    margin-left: 10px;
+}
+
 h4 {
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 h5 {
@@ -94,7 +106,7 @@ h5 {
 }
 
 .daybox {
-    margin: 10px;
+    margin: 10px 20px 0px 0px;
     padding: 5px;
     min-height: 220px;
     min-width: 170px;
