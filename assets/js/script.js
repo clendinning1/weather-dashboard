@@ -103,8 +103,6 @@ async function pullCityInfo() {
 
     cityLat = cityInfo["0"]["lat"];
     cityLon = cityInfo["0"]["lon"];
-
-
 }
 
 
