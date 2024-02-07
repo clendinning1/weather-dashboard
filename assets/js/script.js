@@ -40,6 +40,7 @@ var searchBtn = document.getElementById("searchBtn");
 searchBtn.addEventListener("click", searchCity);
 
 let cityHistory = ["search history:"];
+let hasHistory = false; // so we don't print empty cities before there's a search history
 
 function searchCity () {
     // grab search input
@@ -51,63 +52,36 @@ function searchCity () {
     // translate to string and add to local storage
     localStorage.setItem("cityhistory", JSON.stringify(cityHistory));
 
-    console.log(cityHistory);
+    hasHistory = true;
+
+    console.log("searchcity is working");
 }
 
 
 
-//let userinit = ["initials:"];
-//let userscore = ["scores:"];
-//let hasScores = false;
-//
-//function submitBtnFunct() {
-//    // grab initials
-//    let playerInitials = document.getElementById("initials")[0].value;
-//
-//    // adds initials and score to arrays
-//    userinit.push(playerInitials);
-//    userscore.push(finalScore);
-//
-//    // translate to string and add to local storage
-//    localStorage.setItem("userinit", JSON.stringify(userinit));
-//    localStorage.setItem("userscore", JSON.stringify(userscore));
-//
-//    // tell the prgrm we have data now
-//    hasScores = true;
-//
-//    // move to high score page
-//    pagehsSwitch();
-//}
-//
-//
-//let scoreSpan = document.getElementById("scorespan");
-//function displayScores() {
-//    // resetting scoreboard
-//    scoreSpan.innerText = "";
-//
+//let allHistory = document.getElementById("history-container");
+//function showHistory() {
 //    // pull data from local storage
-//    var grabinit = localStorage.getItem("userinit");
-//    var grabscore = localStorage.getItem("userscore");
+//    var getHis = localStorage.getItem("cityHistory");
 //
 //    // parse it back into an array from a string
-//    var parseinit = JSON.parse(grabinit);
-//    var parsescore = JSON.parse(grabscore);
+//    var parseHis = JSON.parse(getHis);
+//
+//    console.log("part one of showhistory is working");
 //
 //    // if we have no data, don't run this code
-//    if (hasScores === false) { } else {
-//        // for loop modified from stack overflow link in readme.
-//        for (let i = 1; i < parseinit.length; i++) {
+//    if (hasHistory === false) { } else {
+//        for (let i = 1; i < parseHis.length; i++) {
 //            // starting at one; running as long as i < the number of values in the array; increasing by one each time the code is executed
-//            let storedScores = document.createElement("p"); // ss creates a paragraph element
-//            storedScores.innerText = ([i] + ". " + parseinit[i] + " - " + parsescore[i]);
-//            // text in the p element = "i. initials - score" for each iteration.
-//            scoreSpan.appendChild(storedScores); // attaches ss to the scorespan id in the html
+//            let historyList = document.createElement("p"); // historyList creates a paragraph element
+//            historyList.innerText = (parseHis[i]);
+//            // text in the p element = each piece of History
+//            allHistory.appendChild(historyList); // attaches historyList to the history-container id in the html
 //        }
+//        console.log("part two of showhistory is working");
 //    }
 //
 //}
-
-
 
 
 
