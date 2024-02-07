@@ -6,16 +6,17 @@
 //
 // 4. WHEN I click on a city in the search history, THEN
 //      a. I am again presented with current and future conditions for that city
-//
-// 5. Hint: Using the 5 Day Weather Forecast API, you'll notice that you will need
-//    to pass in coordinates instead of just a city name. Using the OpenWeatherMap
-//    APIs, how could we retrieve geographical coordinates given a city name?
 
 
 
 // search functions
 // var for user input in form
 // userinput = city
+// recieve user input of city
+// then feed user input into pull city info
+// run city info then feed it into All Weather
+// then run All Weather to pull and display it
+
 
 // openweathermap API
 var APIKey = "fc7efc392867b6b77f021be757a566cf";
@@ -24,21 +25,16 @@ var APIKey = "fc7efc392867b6b77f021be757a566cf";
 var cityInput = "austin"
 var geocodeURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput + "&limit=1&appid=" + APIKey
 
+// Declaring city coord vars for later
 var cityLat = 0;
 var cityLon = 0;
-var cityStatus = cityLat + cityLon; // to test if pullAllWeather can run
 
 
 
 
 
-// recieve user input of city
-// then feed user input into pull city info
-// run city info then feed it into All Weather
-// then run All Weather to pull and display it
 
-
-
+// PULL CITY COORDS
 async function pullCityInfo() {
     // fetch the info
     const cityResponse = await fetch(geocodeURL);
@@ -50,9 +46,8 @@ async function pullCityInfo() {
 
 }
 
-pullCityInfo();
 
-
+// Enter city coords in call
 var cityCoords = "?lat=" + cityLat + "&lon=" + cityLon;
 // URLs for weather and five day forecast
 var weatherURL = "https://api.openweathermap.org/data/2.5/weather" + cityCoords + "&appid=" + APIKey + "&units=imperial";
@@ -173,5 +168,4 @@ async function pullAllWeather() {
 }
 
 pullAllWeather();
-
 
