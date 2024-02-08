@@ -1,6 +1,6 @@
 # Weather Dashboard
 ## Description & Usage
-
+A weather dashboard for viewing the current and five-day forecasts!
 ## Website Preview
 - Website Link: https://clendinning1.github.io/weather-dashboard/
 - Repository Link: https://github.com/clendinning1/weather-dashboard/
