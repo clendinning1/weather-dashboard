@@ -21,23 +21,27 @@
             <search>
                 <!--Search Bar-->
                 <div class="input-group">
-                    <div class="form-outline" data-mdb-input-init>
-                        <input type="search" id="form1" class="form-control" />
-                        <label class="form-label" for="form1"></label>
-                    </div>
-                    <button type="button" class="btn btn-primary" data-mdb-ripple-init>
-                        <i class="fas fa-search"></i>
-                    </button>
+                    <form id="searchbar">
+                        <div class="form-outline" data-mdb-input-init>
+                            <input type="search" id="form1" class="form-control" />
+                            <label class="form-label" for="form1"></label>
+                        </div>
+                        <button type="button" id="searchBtn" class="btn btn-primary" data-mdb-ripple-init>
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
                 </div>
             </search>
             <nav id="history">
                 <hr>
                 <!--History buttons-->
-                <div class="his-btn">
-                    <a class="his-btn-label" href="#">City Name</a>
-                </div>
-                <div class="his-btn">
-                    <a class="his-btn-label" href="#">City Name 2</a>
+                <div id="history-container">
+                    <div class="his-btn">
+                        <a class="his-btn-label" href="#">City Name</a>
+                    </div>
+                    <div class="his-btn">
+                        <a class="his-btn-label" href="#">City Name 2</a>
+                    </div>
                 </div>
             </nav>
         </aside>
