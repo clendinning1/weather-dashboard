@@ -57,7 +57,6 @@ function searchCity() {
 }
 
 
-
 //let allHistory = document.getElementById("history-container");
 //function showHistory() {
 //    // pull data from local storage
@@ -105,7 +104,10 @@ async function pullCityInfo() {
     cityLon = cityInfo["0"]["lon"];
 }
 
+cityLat = "30.26715000"
+cityLon = "-97.74306000"
 
+ 
 // Enter city coords in call
 var cityCoords = "?lat=" + cityLat + "&lon=" + cityLon;
 // URLs for weather and five day forecast
